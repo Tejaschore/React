@@ -1,0 +1,27 @@
+body{
+  background-color: rgb(27, 215, 215);
+}
+
+.App {
+  text-align:center;
+  
+}
+
+.form{
+  text-align: center;
+  margin-top: 200px;
+  
+  
+  
+}
+
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+
+
