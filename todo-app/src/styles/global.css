@@ -1,0 +1,111 @@
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Design Tokens ── */
+:root {
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  --color-bg:           #f5f4f0;
+  --color-surface:      #ffffff;
+  --color-surface-alt:  #f0efeb;
+  --color-border:       rgba(0,0,0,0.08);
+  --color-border-hover: rgba(0,0,0,0.18);
+
+  --color-text-primary:   #1a1a18;
+  --color-text-secondary: #6b6b66;
+  --color-text-hint:      #aeada8;
+
+  --color-work-bg:     #e6f1fb;
+  --color-work-text:   #185fa5;
+  --color-work-border: #378add;
+
+  --color-personal-bg:     #eaf3de;
+  --color-personal-text:   #3b6d11;
+  --color-personal-border: #639922;
+
+  --color-urgent-bg:     #fcebeb;
+  --color-urgent-text:   #a32d2d;
+  --color-urgent-border: #e24b4a;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --transition: 0.15s ease;
+}
+
+/* ── Dark Mode ── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg:           #1a1a18;
+    --color-surface:      #242422;
+    --color-surface-alt:  #2c2c2a;
+    --color-border:       rgba(255,255,255,0.08);
+    --color-border-hover: rgba(255,255,255,0.18);
+
+    --color-text-primary:   #f0efe9;
+    --color-text-secondary: #a0a09a;
+    --color-text-hint:      #5a5a56;
+
+    --color-work-bg:     #0c447c;
+    --color-work-text:   #b5d4f4;
+    --color-work-border: #378add;
+
+    --color-personal-bg:     #27500a;
+    --color-personal-text:   #c0dd97;
+    --color-personal-border: #639922;
+
+    --color-urgent-bg:     #791f1f;
+    --color-urgent-text:   #f7c1c1;
+    --color-urgent-border: #e24b4a;
+  }
+}
+
+/* ── Base ── */
+body {
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+input, textarea {
+  font-family: inherit;
+  color: inherit;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-6px); }
+  40%       { transform: translateX(6px); }
+  60%       { transform: translateX(-4px); }
+  80%       { transform: translateX(4px); }
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
